@@ -1,0 +1,36 @@
+#Paredes
+self.addShape(createTextureRectangularPipe([0,0.33],[0,0.49]))
+
+#Techo
+techo = createTextureTriangle([0,0.33],[0,0.49]).horizontalRotate(np.pi).verticalRotate(-np.pi/2).translate([0,0.5,0]) #-np.pi*1.5
+techo.merge(createTextureTriangle([0,0.33],[0,0.49]).verticalRotate(np.pi/2).translate([0,-0.5,0]))
+techo.merge(createTextureQuad([0.34,0.66],[0.01,0.49]).scale([1.15,1.3,1]).verticalRotate(-np.pi*0.353).horizontalRotate(np.pi/2).translate([-0.2895,0,-0.075]).stretch(0.1))
+techo.merge(createTextureQuad([0.34,0.66],[0.01,0.49]).scale([1.15,1.3,1]).verticalRotate(np.pi*0.353).horizontalRotate(np.pi/2).translate([0.2895,0,-0.075]).stretch(0.1))
+techo.scale([1,1,0.8]).translate([0,0,0.9])
+self.addShape(techo)
+
+#Puerta
+puerta = createTextureQuad([0,0.33],[0.5,1])
+puerta.merge(createTextureFrame([0.01,0.02],[0.74,0.75], 0.05))
+self.addShape(puerta.scale([0.25,0.75,1]).verticalRotate(np.pi/2).horizontalRotate(np.pi).translate([-0.2,0.51,-0.15]))
+
+#Ventanas
+ventana = createTextureQuad([0.34,0.66],[0.5,1])
+ventana.merge(createTextureCrossFrame([0.48,0.51],[0.5,0.52], 0.05)).verticalRotate(np.pi/2)
+v1, v2, v3 = copy.deepcopy(ventana), copy.deepcopy(ventana), copy.deepcopy(ventana)
+v4, v5, v6, v7 = copy.deepcopy(ventana), copy.deepcopy(ventana), copy.deepcopy(ventana), copy.deepcopy(ventana)
+self.addShape(v1.horizontalRotate(np.pi).scale([0.25,1,0.4]).translate([0.2,0.51,0]))
+self.addShape(v2.horizontalRotate(np.pi).scale([0.18,1,0.3]).translate([0,0.51,0.8]))
+self.addShape(v3.scale([0.18,1,0.3]).translate([0,-0.51,0.8]))
+self.addShape(v4.scale([0.18,1,0.4]).horizontalRotate(np.pi/2).translate([0.51,0.2,0]))
+self.addShape(v5.scale([0.18,1,0.4]).horizontalRotate(np.pi/2).translate([0.51,-0.2,0]))
+self.addShape(v6.scale([0.18,1,0.4]).horizontalRotate(-np.pi/2).translate([-0.51,0.2,0]))
+self.addShape(v7.scale([0.18,1,0.4]).horizontalRotate(-np.pi/2).translate([-0.51,-0.2,0]))
+
+#Base
+self.addShape(createTextureCube([0.67,0.9], [0.5,1]).translate([0,0,-1]).scale([1.03,1.05,1]))
+
+#Ajustes
+self.baseShape.scale([1,1.5,0.6]).translate([0,0,-0.1])
+
+self.setGPUShape()

@@ -1,0 +1,10 @@
+#Terreno
+self.addShape(createTextureQuad([0,7], [0,24]).scale([7,24,1]).stretch(-0.05))
+self.addShape(createTextureQuad([0,7], [0,24]).scale([7,24,1]).translate([8,0,0]).stretch(-0.05))
+self.addShape(createTextureQuad([0,7], [0,12]).scale([7,12,1]).translate([-8,-6,0]).stretch(-0.05))
+self.addShape(createTextureTriangleRectangle([0,7], [0,12]).scale([7,12,1]).translate([-8,6,0]).stretch(-0.05))
+
+#Ajustes
+self.baseShape.translate([0,0,0.01])       
+
+self.setGPUShape()

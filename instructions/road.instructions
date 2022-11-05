@@ -1,0 +1,12 @@
+#Camino
+self.addShape(createTextureQuad([0,0.5], [0,24]).translate([-4,0,0]).scale([1,24,1]))
+self.addShape(createTextureQuad([0,0.5], [0,24]).translate([4,0,0]).scale([1,24,1]))
+self.addShape(createTextureQuad([0,0.5], [0,24]).translate([12,0,0]).scale([1,24,1]))
+self.addShape(createTextureQuad([0,0.5], [0,12]).translate([-12,-0.5,0]).scale([1,12,1]))
+self.addShape(createTextureQuad([0,0.5], [0,25]).horizontalRotate(np.pi/2).scale([25,1,1]).translate([0,-12.5,0])) #0.5 por el ancho del camino
+self.addShape(createTextureQuad([0,0.5], [0,17]).horizontalRotate(np.pi/2).scale([17,1,1]).translate([4,12.5,0]))
+self.addShape(createTextureQuad([0,0.5], [0,13.9]).scale([1,13.9,1]).horizontalRotate(-np.pi/6-0.0045).translate([-8.433,6.25,0]))
+self.addShape(createTextureTriangle([0.51,1], [0,1]).scale([0.52,1,1]).horizontalRotate(-np.pi/2-0.27).translate([-11.95,0.115,0]))
+self.addShape(createTextureTriangle([0.51,1], [0,1]).scale([1,0.9,1]).horizontalRotate(-np.pi/2-1.05).translate([-4.71,12.36,0]))
+
+self.setGPUShape()
